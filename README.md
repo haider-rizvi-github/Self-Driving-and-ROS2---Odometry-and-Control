@@ -22,9 +22,10 @@ In this project, we will create and simulate a self-driving robot using ROS2, Ga
 * Create a digital twin of a self-driving robot
 * Master the TF2 library
 
-## Technologies Used
+## Environment
 
-* ROS2
+* Ubuntu 24.04.3 LTS (Noble)
+* ROS2 Jazzy
 * Python
 * C++
 * Gazebo
