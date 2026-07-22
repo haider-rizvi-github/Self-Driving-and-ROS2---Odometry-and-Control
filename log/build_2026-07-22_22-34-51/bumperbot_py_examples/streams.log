@@ -1,0 +1,28 @@
+[0.917s] Invoking command in '/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/src/bumperbot_py_examples': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bumperbot_py_examples build --build-base /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/build install --record /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/install.log --single-version-externally-managed install_data
+[1.063s] running egg_info
+[1.072s] writing ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/PKG-INFO
+[1.082s] writing dependency_links to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/dependency_links.txt
+[1.082s] writing entry points to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/entry_points.txt
+[1.082s] writing requirements to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/requires.txt
+[1.082s] writing top-level names to ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/top_level.txt
+[1.417s] reading manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[1.417s] writing manifest file '../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info/SOURCES.txt'
+[1.599s] running build
+[1.599s] running build_py
+[1.599s] copying bumperbot_py_examples/publisher_member_function.py -> /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/build/lib/bumperbot_py_examples
+[1.599s] copying bumperbot_py_examples/subscriber_member_function.py -> /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/build/lib/bumperbot_py_examples
+[1.600s] running install
+[1.604s] running install_lib
+[1.613s] copying /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/build/lib/bumperbot_py_examples/publisher_member_function.py -> /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages/bumperbot_py_examples
+[1.613s] copying /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/build/lib/bumperbot_py_examples/subscriber_member_function.py -> /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages/bumperbot_py_examples
+[1.614s] byte-compiling /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages/bumperbot_py_examples/publisher_member_function.py to publisher_member_function.cpython-312.pyc
+[1.619s] byte-compiling /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages/bumperbot_py_examples/subscriber_member_function.py to subscriber_member_function.cpython-312.pyc
+[1.620s] running install_data
+[1.620s] running install_egg_info
+[1.630s] removing '/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages/bumperbot_py_examples-0.0.0-py3.12.egg-info' (and everything under it)
+[1.630s] Copying ../../build/bumperbot_py_examples/bumperbot_py_examples.egg-info to /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages/bumperbot_py_examples-0.0.0-py3.12.egg-info
+[1.631s] running install_scripts
+[1.698s] Installing publisher_member_function script to /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/bumperbot_py_examples
+[1.714s] Installing subscriber_member_function script to /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/bumperbot_py_examples
+[1.715s] writing list of installed files to '/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/install.log'
+[1.768s] Invoked command in '/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/src/bumperbot_py_examples' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/install/bumperbot_py_examples/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/bumperbot_py_examples build --build-base /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/build install --record /home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/build/bumperbot_py_examples/install.log --single-version-externally-managed install_data

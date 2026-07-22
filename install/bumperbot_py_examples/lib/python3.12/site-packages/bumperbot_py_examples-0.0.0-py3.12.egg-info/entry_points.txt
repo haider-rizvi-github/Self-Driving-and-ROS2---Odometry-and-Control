@@ -1,0 +1,3 @@
+[console_scripts]
+publisher_member_function = bumperbot_py_examples.publisher_member_function:main
+subscriber_member_function = bumperbot_py_examples.subscriber_member_function:main
