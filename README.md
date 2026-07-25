@@ -63,7 +63,16 @@ sudo apt install -y \
   ros-jazzy-tf-transformations \
   ros-jazzy-joy-teleop \
   ros-jazzy-joy \
-  ros-jazzy-robot-localization
+  ros-jazzy-robot-localization \
+  ros-jazzy-urdf.tutorial
+```
+
+### Visualizing URDF
+
+To visualize the robot URDF model, run:
+
+```bash
+ros2 launch urdf_tutorial display.launch.py model:=/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/src/robot_description/urdf/bumperbot.urdf.xacro
 ```
 
 ### Install Python Packages
