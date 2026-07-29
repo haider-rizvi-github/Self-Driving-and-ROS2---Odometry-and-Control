@@ -69,3 +69,11 @@ ros2 param get /simple_parameter_node simple_param_string
 ros2 run bumperbot_py_examples simple_parameter --ros-args -p simple_param_string:="Ali"
 ros2 run bumperbot_py_examples simple_parameter --ros-args -p simple_int:=30
 ```
+
+## Gazebo launch
+
+This workspace includes the robot description package for Gazebo.
+
+```bash
+ros2 launch robot_description gazebo.launch.py
+```

@@ -24,6 +24,7 @@ This package contains the robot description assets for the ROS2 project. It is o
   - Contains the robot model definition files.
   - `bumperbot.urdf.xacro` is the XACRO source used to generate the robot URDF.
   - To visualize with the urdf_tutorial package use `ros2 launch urdf_tutorial display.launch.py model:=/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/src/robot_description/urdf/bumperbot.urdf.xacro`
+  - To launch Gazebo with this robot description use `ros2 launch robot_description gazebo.launch.py`
 
 - `meshes/`
   - Geometry files used by the URDF models.
