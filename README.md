@@ -123,3 +123,44 @@ Check if ROS2 control packages are available:
 ros2 pkg list | grep controller
 ```
 
+## Bumperbot Controller Launch Instructions
+
+To run the simulated Bumperbot with the controller, use the following launch sequence.
+
+1. Launch the robot description in Gazebo:
+
+```bash
+ros2 launch robot_description gazebo.launch.py
+```
+
+2. Launch the bumperbot controller:
+
+```bash
+ros2 launch bumperbot_controller controller.launch.py
+```
+
+3. Send velocity commands to the controller:
+
+```bash
+ros2 topic pub /simple_velocity_controller/commands std_msgs/msg/Float64MultiArray 'layout:
+  dim: []
+  data_offset: 0
+ data: [1,-1]
+'
+```
+
+Command values:
+
+* `1` = rotate the wheel forward
+* `0` = stop the wheel
+* `-1` = rotate the wheel backward
+
+### Helpful ROS2 Control Commands
+
+Use these commands to inspect the ROS2 control system and active controllers:
+
+* `ros2 topic list`
+* `ros2 control list_hardware_interfaces`
+* `ros2 control list_hardware_components`
+* `ros2 control list_controllers`
+

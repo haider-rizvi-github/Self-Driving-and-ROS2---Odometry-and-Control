@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<robot name="bumperbot" xmlns:xacro="http://ros.org/wiki/xacro">
+        
+    <ros2_control type="system" name="RobotSystem">
+
+
+            <!-- ros2_control Gazebo -->
+            <!-- ROS 2 Humble -->
+            <xacro:if value="$(arg is_ignition)">
+                <hardware>
+                    <plugin>ign_ros2_control/IgnitionSystem</plugin>
+                </hardware>
+            </xacro:if>
+
+            <!-- ROS 2 Iron or above -->
+            <xacro:unless value="$(arg is_ignition)">
+                <hardware>
+                    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+                </hardware>
+            </xacro:unless>
+
+            <!-- joint configurations-->
+             <joint name="wheel_right_joint">
+
+                <!-- defines how we want to send commands to the motors-->
+                <command_interface name="velocity">
+                    <param name="min">-1</param>
+                    <param name="max">1</param>   
+                </command_interface>
+
+                <!-- defines how we recieve feedbacks of motors-->
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>   
+                
+             </joint>
+
+             <joint name="wheel_left_joint">
+
+                <!-- defines how we want to send commands to the motors-->
+                <command_interface name="velocity">
+                    <param name="min">-1</param>
+                    <param name="max">1</param>   
+                </command_interface>
+
+                <!-- defines how we recieve feedbacks of motors-->
+                <state_interface name="position"/>
+                <state_interface name="velocity"/>   
+                
+             </joint>
+
+    </ros2_control>
+</robot>

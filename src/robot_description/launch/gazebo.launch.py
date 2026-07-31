@@ -15,6 +15,9 @@ from pathlib import Path
 
 def generate_launch_description():
 
+    ros_distro = os.environ["ROS_DISTRO"]
+    is_ignition = "true" if ros_distro == "humble" else "false"
+
     model_arg = DeclareLaunchArgument(
         name="model",
         default_value=os.path.join(
@@ -35,7 +38,9 @@ def generate_launch_description():
     )
 
     robot_description = ParameterValue(
-        Command(["xacro ", LaunchConfiguration("model")]),
+        Command(
+            ["xacro ", LaunchConfiguration("model"), " is_ignition:=", is_ignition]
+        ),
         value_type=str,  # Specify the type of the parameter value
     )
 

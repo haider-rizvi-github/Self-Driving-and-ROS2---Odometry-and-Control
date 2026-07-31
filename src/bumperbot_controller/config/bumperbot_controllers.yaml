@@ -1,0 +1,21 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 #hz
+    use_sim_time: true
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster  # controller responsible for publishing states of the robot
+
+    simple_velocity_controller:
+      type: velocity_controllers/JointGroupVelocityController  # controller responsible for controlling velocity of actuated wheels
+
+
+simple_velocity_controller:
+  ros__parameters:
+    joints:
+      - wheel_left_joint
+      - wheel_right_joint
+
+
+# 1. Don´t forget to update the CMakeLists.txt
+# 2. Add the controller path to robot_description/urdf/bumperbot_gazebo.xacro

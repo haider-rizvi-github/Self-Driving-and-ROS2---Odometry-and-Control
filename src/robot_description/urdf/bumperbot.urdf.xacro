@@ -2,10 +2,15 @@
 
 <robot name="bumperbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:arg name="is_ignition" default="false"/> <!--if using Gazebo Harmonic (default="false") and Gazebo Ignition (default="true")
+                                                        check bumperbot_gazebo.xacro file as well-->
 
-    <!-- including xml files-->
+    <!-- including Gazebo Parameters-->
     <xacro:include filename="$(find robot_description)/urdf/bumperbot_gazebo.xacro" />
-    
+
+    <!-- including ROS2 Control-->
+    <xacro:include filename="$(find robot_description)/urdf/bumperbot_ros2_control.xacro" />
+
     <!-- Define the robot's links and joints -->
 
     <!-- Parent link -->
