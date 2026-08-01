@@ -14,7 +14,7 @@
     <!-- Define the robot's links and joints -->
 
     <!-- Parent link -->
-    <link name="world"/> 
+    <link name="base_footprint"/> 
 
 
     <!-- collisions and inertials are important for physics simulation -->
@@ -163,7 +163,7 @@
 
     <!-- Define the joint connecting the base_link to the world -->
     <joint name="base_joint" type="fixed">
-        <parent link="world"/>
+        <parent link="base_footprint"/>
         <child link="base_link"/>
         <origin xyz="0 0 0.033" rpy="0 0 0"/>
     </joint>

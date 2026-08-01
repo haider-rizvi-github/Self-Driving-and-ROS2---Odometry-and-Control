@@ -13,6 +13,7 @@ bumperbot_py_examples/__init__.py
 bumperbot_py_examples/publisher_member_function.py
 bumperbot_py_examples/simple_parameter.py
 bumperbot_py_examples/subscriber_member_function.py
+bumperbot_py_examples/turtlesim_kinematics.py
 resource/bumperbot_py_examples
 test/test_copyright.py
 test/test_flake8.py

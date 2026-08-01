@@ -70,6 +70,33 @@ ros2 run bumperbot_py_examples simple_parameter --ros-args -p simple_param_strin
 ros2 run bumperbot_py_examples simple_parameter --ros-args -p simple_int:=30
 ```
 
+## Turtlesim Kinematics Example
+
+This package includes `turtlesim_kinematics.py`, which reads pose updates from two turtles in the `turtlesim` simulator and logs the translation vector from `turtle1` to `turtle2`.
+
+To run the node, use these commands in separate terminals:
+
+```bash
+ros2 run turtlesim turtlesim_node
+```
+
+```bash
+ros2 service call /spawn turtlesim/srv/Spawn "x: 1.0
+y: 4.0
+theta: 0.0
+name: 'turtle2'"
+```
+
+```bash
+ros2 run bumperbot_py_examples simple_turtlesim_kinematics
+```
+
+```bash
+ros2 run turtlesim turtle_teleop_key
+```
+
+This starts `turtlesim`, spawns a second turtle named `turtle2`, runs the kinematics node, and enables keyboard teleoperation for turtle control.
+
 ## Gazebo launch
 
 This workspace includes the robot description package for Gazebo.

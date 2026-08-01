@@ -27,6 +27,7 @@ setup(
             "publisher_member_function = bumperbot_py_examples.publisher_member_function:main",
             "subscriber_member_function = bumperbot_py_examples.subscriber_member_function:main",
             "simple_parameter = bumperbot_py_examples.simple_parameter:main",
+            "simple_turtlesim_kinematics = bumperbot_py_examples.turtlesim_kinematics:main",
         ],
     },
 )
