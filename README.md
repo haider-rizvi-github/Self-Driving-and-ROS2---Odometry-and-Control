@@ -123,19 +123,19 @@ Check if ROS2 control packages are available:
 ros2 pkg list | grep controller
 ```
 
-## Differential Kinematics of the Robot
+## Differential-Drive Forward Kinematics
 
-For a differential-drive robot, the relation between the robot body motion and the wheel angular velocities can be written as:
+The robot's linear and angular velocities are calculated from the wheel angular velocities:
 
 $$
 \begin{bmatrix}
 V \\
-W
+\omega
 \end{bmatrix}
 =
 \begin{bmatrix}
-\frac{Wr}{2} & \frac{Wr}{2} \\
-\frac{Wr}{Ws} & -\frac{Wr}{Ws}
+\frac{r}{2} & \frac{r}{2} \\
+\frac{r}{s} & -\frac{r}{s}
 \end{bmatrix}
 \begin{bmatrix}
 \dot{\phi}_r \\
@@ -143,13 +143,14 @@ W
 \end{bmatrix}
 $$
 
-Where:
+where:
 
-- $V$ is the linear velocity of the robot
-- $W$ is the angular velocity of the robot
-- $Wr$ is the wheel radius
-- $Ws$ is the wheel separation
-- $\dot{\phi}_r$ and $\dot{\phi}_l$ are the right and left wheel rotational velocities
+- $V$ is the robot's linear velocity.
+- $\omega$ is the robot's angular velocity.
+- $r$ is the wheel radius.
+- $s$ is the wheel separation.
+- $\dot{\phi}_r$ is the right-wheel angular velocity.
+- $\dot{\phi}_l$ is the left-wheel angular velocity.
 
 ## Bumperbot Controller Launch Instructions
 
