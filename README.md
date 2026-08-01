@@ -125,9 +125,9 @@ ros2 pkg list | grep controller
 
 ## Differential-Drive Forward Kinematics
 
-The robot's linear and angular velocities are calculated from the wheel angular velocities:
+The relationship between robot velocity and wheel velocity is:
 
-$$
+```math
 \begin{bmatrix}
 V \\
 \omega
@@ -141,7 +141,6 @@ V \\
 \dot{\phi}_r \\
 \dot{\phi}_l
 \end{bmatrix}
-$$
 
 where:
 
