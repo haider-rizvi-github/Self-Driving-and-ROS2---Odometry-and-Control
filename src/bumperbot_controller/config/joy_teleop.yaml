@@ -1,0 +1,21 @@
+joy_teleop:
+  ros__parameters:
+    move:
+      type: topic  # will publish to a topic
+      interface_type: geometry_msgs/msg/TwistStamped
+      topic_name: bumperbot_controller/cmd_vel  # topic name
+
+      deadman_buttons: [5]  # you can set any button number here on your joystick
+                          #  deadman_buttons must be pressed to enable movement commands
+
+      axis_mappings:
+        twist-linear-x:
+          axis: 1  # left stick vertical axis
+          scale: 1.0  # scale factor for linear velocity
+          offset: 0.0  # offset for linear velocity
+        twist-angular-z:
+          axis: 3  # left stick horizontal axis
+          scale: 1.0  # scale factor for angular velocity
+          offset: 0.0  # offset for angular velocity
+
+# You can add more axis mappings for other controls if needed, such as for controlling additional features of the robot.

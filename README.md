@@ -202,7 +202,17 @@ In a second terminal:
 ros2 launch bumperbot_controller controller.launch.py
 ```
 
-### 3. Move the Robot with the Controller
+### 3. Move the Robot with Joystick
+
+If you want to control the robot with a joystick, run the following in a third terminal after connecting the controller:
+
+```bash
+ros2 launch bumperbot_controller joystick_teleop.launch.py
+```
+
+Tip: connect the controller first, and only then run the command.
+
+### 4. Move the Robot with the Controller
 
 To drive the robot using the controller launch file, publish a TwistStamped message to the `/bumperbot_controller/cmd_vel` topic:
 
@@ -225,7 +235,7 @@ twist:
 '
 ```
 
-### 4. Send Wheel-Velocity Commands
+### 5. Send Wheel-Velocity Commands
 
 In a third terminal, publish wheel velocities:
 
