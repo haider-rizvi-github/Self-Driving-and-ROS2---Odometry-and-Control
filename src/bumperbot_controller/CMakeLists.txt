@@ -8,11 +8,26 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 
+#using these packages to create a python package as Cmake is not able to create a python package on its own
+# also add these dependencies to the package.xml file
+find_package(ament_cmake_python REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+
+ament_python_install_package(${PROJECT_NAME})
+
 install(
-  DIRECTORY config launch
+  DIRECTORY config launch bumperbot_controller
   DESTINATION share/${PROJECT_NAME}
 )
 
+# Install the Python controller script
+install(PROGRAMS
+  ${PROJECT_NAME}/simple_controller.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME simple_controller
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

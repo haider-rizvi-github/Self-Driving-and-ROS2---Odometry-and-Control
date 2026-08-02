@@ -9,11 +9,18 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-<!-- Add dependencies here -->
-  <exec_depend>xacro</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
+  <!-- Add buildtool dependencies here -->
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <!-- Add dependencies here -->
   <exec_depend>ros2launch</exec_depend>
   <exec_depend>controller_manager</exec_depend>
+
+  <!-- Add dependencies here that we added in CMakeLists.txt -->
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

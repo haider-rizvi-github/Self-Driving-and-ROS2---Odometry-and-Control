@@ -18,3 +18,4 @@ resource/bumperbot_py_examples
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
+test/test_rotation_utils.py

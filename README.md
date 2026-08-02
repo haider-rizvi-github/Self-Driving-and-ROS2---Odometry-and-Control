@@ -138,6 +138,7 @@ ros2 launch urdf_tutorial display.launch.py \
 
 This opens RViz and displays the Bumperbot URDF model.
 
+<!--
 ## Differential-Drive Forward Kinematics
 
 The relationship between the robot velocity and wheel angular velocities is:
@@ -176,6 +177,7 @@ V = \frac{r}{2}\left(\dot{\phi}_r+\dot{\phi}_l\right)
 ```math
 \omega = \frac{r}{s}\left(\dot{\phi}_r-\dot{\phi}_l\right)
 ```
+-->
 
 ## Bumperbot Controller Launch Instructions
 
@@ -200,7 +202,30 @@ In a second terminal:
 ros2 launch bumperbot_controller controller.launch.py
 ```
 
-### 3. Send Wheel-Velocity Commands
+### 3. Move the Robot with the Controller
+
+To drive the robot using the controller launch file, publish a TwistStamped message to the `/bumperbot_controller/cmd_vel` topic:
+
+```bash
+ros2 topic pub /bumperbot_controller/cmd_vel geometry_msgs/msg/TwistStamped '
+header:
+  stamp:
+    sec: 0
+    nanosec: 0
+  frame_id: ""
+twist:
+  linear:
+    x: 0.2
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: -0.5
+'
+```
+
+### 4. Send Wheel-Velocity Commands
 
 In a third terminal, publish wheel velocities:
 
