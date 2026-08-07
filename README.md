@@ -194,12 +194,20 @@ source install/setup.bash
 ros2 launch robot_description gazebo.launch.py
 ```
 
-### 2. Launch the Bumperbot Controller
+### 2. Launch a Controller
 
-In a second terminal:
+The launch file supports two controller options:
+
+- Launch the simple velocity controller:
 
 ```bash
-ros2 launch bumperbot_controller controller.launch.py
+ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=true
+```
+
+- Launch the bumperbot_controller that uses the diff_drive_controller library:
+
+```bash
+ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=false
 ```
 
 ### 3. Move the Robot with Joystick
