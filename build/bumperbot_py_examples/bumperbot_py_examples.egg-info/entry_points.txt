@@ -1,5 +1,7 @@
 [console_scripts]
 publisher_member_function = bumperbot_py_examples.publisher_member_function:main
+simple_dynamic_tf_kinematics = bumperbot_py_examples.simple_dynamic_tf_kinematics:main
 simple_parameter = bumperbot_py_examples.simple_parameter:main
+simple_tf_kinematics = bumperbot_py_examples.simple_static_tf_kinematics:main
 simple_turtlesim_kinematics = bumperbot_py_examples.turtlesim_kinematics:main
 subscriber_member_function = bumperbot_py_examples.subscriber_member_function:main

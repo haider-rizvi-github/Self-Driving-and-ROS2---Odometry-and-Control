@@ -28,6 +28,8 @@ setup(
             "subscriber_member_function = bumperbot_py_examples.subscriber_member_function:main",
             "simple_parameter = bumperbot_py_examples.simple_parameter:main",
             "simple_turtlesim_kinematics = bumperbot_py_examples.turtlesim_kinematics:main",
+            "simple_tf_kinematics = bumperbot_py_examples.simple_static_tf_kinematics:main",
+            "simple_dynamic_tf_kinematics = bumperbot_py_examples.simple_dynamic_tf_kinematics:main",
         ],
     },
 )

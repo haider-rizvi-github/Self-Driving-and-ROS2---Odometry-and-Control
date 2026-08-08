@@ -97,6 +97,57 @@ ros2 run turtlesim turtle_teleop_key
 
 This starts `turtlesim`, spawns a second turtle named `turtle2`, runs the kinematics node, and enables keyboard teleoperation for turtle control.
 
+## TF kinematics examples
+
+These examples publish coordinate-frame relationships (TF transforms) so you can visualize the robot frames in RViz.
+
+### Dynamic TF example
+
+The node in `bumperbot_py_examples/simple_dynamic_tf_kinematics.py` publishes two transforms:
+
+- a static transform from `bumperbot_base` to `bumperbot_top` (the top frame stays 0.3 m above the base)
+- a dynamic transform from `odom` to `bumperbot_base` that slowly moves the base along the x-axis over time
+
+This shows how a robot can have a fixed frame relationship for body parts and a changing frame relationship for motion.
+
+To run it:
+
+1. Open a terminal and start RViz:
+
+   ```bash
+   rviz2
+   ```
+
+2. In RViz, set the Fixed Frame to `odom` and add a `TF` display.
+
+3. In another terminal, run:
+
+   ```bash
+   ros2 run bumperbot_py_examples simple_dynamic_tf_kinematics
+   ```
+
+### Static TF example
+
+The node in `bumperbot_py_examples/simple_static_tf_kinematics.py` publishes a single static transform from `bumperbot_base` to `bumperbot_top`.
+
+This is useful for showing a fixed relationship between two robot frames.
+
+To run it:
+
+1. Open a terminal and start RViz:
+
+   ```bash
+   rviz2
+   ```
+
+2. In RViz, set the Fixed Frame to `bumperbot_base` and add a `TF` display.
+
+3. In another terminal, run:
+
+   ```bash
+   ros2 run bumperbot_py_examples simple_tf_kinematics
+   ```
+
 ## Gazebo launch
 
 This workspace includes the robot description package for Gazebo.
