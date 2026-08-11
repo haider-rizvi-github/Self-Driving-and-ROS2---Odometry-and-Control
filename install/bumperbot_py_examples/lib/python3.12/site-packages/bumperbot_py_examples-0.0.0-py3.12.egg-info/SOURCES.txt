@@ -13,6 +13,8 @@ bumperbot_py_examples/__init__.py
 bumperbot_py_examples/publisher_member_function.py
 bumperbot_py_examples/simple_dynamic_tf_kinematics.py
 bumperbot_py_examples/simple_parameter.py
+bumperbot_py_examples/simple_service_client.py
+bumperbot_py_examples/simple_service_server.py
 bumperbot_py_examples/simple_static_tf_kinematics.py
 bumperbot_py_examples/subscriber_member_function.py
 bumperbot_py_examples/turtlesim_kinematics.py

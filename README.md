@@ -21,6 +21,7 @@ This project focuses on creating and simulating a self-driving robot using ROS 2
 - Differential-drive kinematics
 - Digital twins for robots
 - The TF2 library
+- Dynamic TF publication with quaternion rotation computed from Euler angles in `src/bumperbot_py_examples/bumperbot_py_examples/simple_dynamic_tf_kinematics.py`
 
 ## Environment
 

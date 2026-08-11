@@ -70,6 +70,32 @@ ros2 run bumperbot_py_examples simple_parameter --ros-args -p simple_param_strin
 ros2 run bumperbot_py_examples simple_parameter --ros-args -p simple_int:=30
 ```
 
+## Service node example
+
+Runs a service server node that handles the `/add_two_ints` service using `bumperbot_msgs/srv/AddTwoInts`.
+
+To start the service node:
+
+```bash
+ros2 run bumperbot_py_examples simple_service_server
+```
+
+Then call the service from another terminal:
+
+```bash
+ros2 service call /add_two_ints bumperbot_msgs/srv/AddTwoInts "{a: 6, b: 5}"
+```
+
+## Service client example
+
+Runs a client node that sends two integers to the `/add_two_ints` service and prints the sum response.
+
+To run the client with arguments `5` and `4`:
+
+```bash
+ros2 run bumperbot_py_examples simple_service_client 5 4
+```
+
 ## Turtlesim Kinematics Example
 
 This package includes `turtlesim_kinematics.py`, which reads pose updates from two turtles in the `turtlesim` simulator and logs the translation vector from `turtle1` to `turtle2`.
