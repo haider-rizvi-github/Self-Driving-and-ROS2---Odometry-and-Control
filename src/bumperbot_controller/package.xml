@@ -15,11 +15,14 @@
   <!-- Add dependencies here -->
   <exec_depend>ros2launch</exec_depend>
   <exec_depend>controller_manager</exec_depend>
+  <exec_depend>tf_transformations</exec_depend>
 
   <!-- Add dependencies here that we added in CMakeLists.txt -->
   <depend>rclpy</depend>
   <depend>geometry_msgs</depend>
   <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
 
 
   <test_depend>ament_lint_auto</test_depend>

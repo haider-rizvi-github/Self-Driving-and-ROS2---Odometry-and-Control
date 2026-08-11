@@ -93,9 +93,9 @@ def generate_launch_description():
         package="ros_gz_bridge",
         executable="parameter_bridge",
         arguments=[
-            "/model/manipulator/joint_state@sensor_msgs/msg/JointState[gz.msgs.msg.ModelJointState",
-            "/model/manipulator/pose@geometry_msgs/msg/PoseStamped[gz.msgs.msg.Pose",
-            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.msg.Clock",
+            "/model/bumperbot/joint_state@sensor_msgs/msg/JointState[gz.msgs.msg.ModelJointState",
+            "/model/bumperbot/pose@geometry_msgs/msg/PoseStamped[gz.msgs.msg.Pose",
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
         ],
         output="screen",
     )
@@ -107,6 +107,6 @@ def generate_launch_description():
             gazebo_resource_path,
             gazebo,
             gz_spawn_entity,
-            # gz_ros2_bridge,
+            gz_ros2_bridge,
         ]
     )

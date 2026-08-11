@@ -22,6 +22,10 @@ This project focuses on creating and simulating a self-driving robot using ROS 2
 - Digital twins for robots
 - The TF2 library
 - Dynamic TF publication with quaternion rotation computed from Euler angles in `src/bumperbot_py_examples/bumperbot_py_examples/simple_dynamic_tf_kinematics.py`
+- Odometry calculation in `src/bumperbot_controller/bumperbot_controller/simple_controller.py` using differential-drive equations:
+  - linear displacement: `d_s = (r * Δφ_r + r * Δφ_l) / 2`
+  - orientation change: `d_θ = (r * Δφ_r - r * Δφ_l) / wheel_separation`
+  - pose update: `x += d_s * cos(θ)` and `y += d_s * sin(θ)`
 
 ## Environment
 
@@ -209,6 +213,12 @@ ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=tru
 
 ```bash
 ros2 launch bumperbot_controller controller.launch.py use_simple_controller:=false
+```
+
+To view the odometry messages published by the controller, run the following in a separate terminal:
+
+```bash
+ros2 topic echo /bumperbot_controller/odom --no-arr
 ```
 
 ### 3. Move the Robot with Joystick
