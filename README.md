@@ -231,6 +231,30 @@ ros2 launch bumperbot_controller joystick_teleop.launch.py
 
 Tip: connect the controller first, and only then run the command.
 
+Run the Trajectory_Drawing node
+
+To publish the recorded trajectory (Path) for visualization, run the trajectory drawing node in a separate terminal:
+
+```bash
+ros2 run Draw_trajectory trajectory_drawer
+```
+
+Visualize the trajectory in RViz2
+
+To view the trajectory in RViz2:
+
+1. Start RViz2:
+
+```bash
+rviz2
+```
+
+2. In RViz2, set the Fixed Frame to "odom" (top-left under Global Options).
+3. Add a "Path" display (click the Add button) and set its Topic to `/bumperbot_controller/trajectory` (the node publishes the Path here).
+
+This will show the recorded trajectory as a line of poses in the odom frame.
+
+
 ### 4. Move the Robot with the Controller
 
 To drive the robot using the controller launch file, publish a TwistStamped message to the `/bumperbot_controller/cmd_vel` topic:

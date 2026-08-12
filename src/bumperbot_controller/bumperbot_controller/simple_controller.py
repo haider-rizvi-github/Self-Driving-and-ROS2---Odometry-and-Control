@@ -3,7 +3,8 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64MultiArray
-from geometry_msgs.msg import TwistStamped
+from geometry_msgs.msg import TwistStamped, TransformStamped
+from tf2_ros import TransformBroadcaster
 from sensor_msgs.msg import JointState
 import numpy as np
 from rclpy.time import Time
@@ -18,6 +19,8 @@ class SimpleController(Node):
         super().__init__("simple_controller")
 
         self.get_logger().info("Simple Controller Node has been started.")
+
+        self.tf_broadcaster_ = TransformBroadcaster(self)  # to update frame to Odom
 
         # We derived a Differential Drive Kinematics model: Check the equation
         self.declare_parameter(
@@ -138,16 +141,45 @@ class SimpleController(Node):
         self.y_ += d_s * math.sin(self.theta)        
 
         #updating odometry msg
-        q = quaternion_from_euler(0,0,self.theta)
-        self.odom_msg_.pose.pose.orientation.x =q[0]
-        self.odom_msg_.pose.pose.orientation.y =q[1]
-        self.odom_msg_.pose.pose.orientation.z =q[2]
-        self.odom_msg_.pose.pose.orientation.w =q[3]
-        self.odom_msg_.header.stamp = self.get_clock().now().to_msg()
+        # Convert yaw angle to quaternion.
+        q = quaternion_from_euler(0.0, 0.0, self.theta)
+
+        current_stamp = self.get_clock().now().to_msg()
+
+        # Update odometry message.
+        self.odom_msg_.header.stamp = current_stamp
+
         self.odom_msg_.pose.pose.position.x = self.x_
         self.odom_msg_.pose.pose.position.y = self.y_
+        self.odom_msg_.pose.pose.position.z = 0.0
+
+        self.odom_msg_.pose.pose.orientation.x = q[0]
+        self.odom_msg_.pose.pose.orientation.y = q[1]
+        self.odom_msg_.pose.pose.orientation.z = q[2]
+        self.odom_msg_.pose.pose.orientation.w = q[3]
+
         self.odom_msg_.twist.twist.linear.x = linear
         self.odom_msg_.twist.twist.angular.z = angular
+
+        self.odom_pub.publish(self.odom_msg_)
+
+        # Broadcast the dynamic TF: odom -> base_footprint.
+        odom_transform = TransformStamped()
+
+        odom_transform.header.stamp = current_stamp
+        odom_transform.header.frame_id = "odom"
+        odom_transform.child_frame_id = "base_footprint"
+
+        odom_transform.transform.translation.x = self.x_
+        odom_transform.transform.translation.y = self.y_
+        odom_transform.transform.translation.z = 0.0
+
+        odom_transform.transform.rotation.x = q[0]
+        odom_transform.transform.rotation.y = q[1]
+        odom_transform.transform.rotation.z = q[2]
+        odom_transform.transform.rotation.w = q[3]
+
+        self.tf_broadcaster_.sendTransform(odom_transform)
 
         self.odom_pub.publish(self.odom_msg_)
 
