@@ -185,6 +185,7 @@ class SimpleController(Node):
 
         self.get_logger().info("Linear Velocity: %f  ,Angular Velocity: %f" % (linear, angular))
         self.get_logger().info("x: %f, y: %f, Theta: %f" % (self.x_, self.y_, self.theta))
+        
 
         
 

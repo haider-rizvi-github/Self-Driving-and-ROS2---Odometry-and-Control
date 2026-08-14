@@ -75,6 +75,15 @@ sudo apt install -y \
   python3-transforms3d
 ```
 
+### Install Plotjuggler
+
+Plotjuggler is used to visualize real-time topic values as plotted graphs.
+
+```bash
+sudo apt-get install ros-jazzy-plotjuggler
+sudo apt install ros-${ROS_DISTRO}-plotjuggler-ros
+```
+
 ## Source ROS 2 Jazzy
 
 Run the following command before working with ROS 2:
@@ -254,6 +263,50 @@ rviz2
 
 This will show the recorded trajectory as a line of poses in the odom frame.
 
+
+## Robot Visualization of Odometry and Control
+
+Use the following workflow to launch the robot, controller, joystick, RViz, and PlotJuggler for real-time visualization of odometry and control signals.
+
+### Launch Gazebo
+
+```bash
+ros2 launch robot_description gazebo.launch.py
+```
+
+### Launch the Controller
+
+You can switch between the simple controller and the diff-drive controller by using the launch file options.
+
+```bash
+ros2 launch bumperbot_controller controller.launch.py
+```
+
+### Launch the Joystick Controller
+
+```bash
+ros2 launch bumperbot_controller joystick_teleop.launch.py
+```
+
+### Launch RViz2
+
+```bash
+rviz2
+```
+
+### Launch PlotJuggler
+
+PlotJuggler is useful for visualizing real-time topic data and comparing the effects of noise on the robot signals.
+
+```bash
+ros2 run plotjuggler plotjuggler
+```
+
+### Visualize the Signals in PlotJuggler
+
+1. Set up the topic subscribers in PlotJuggler.
+2. Drag out the signals you want to compare, such as odometry values, wheel speeds, or control inputs.
+3. Inspect the plotted graphs to analyze signal behavior and noise effects.
 
 ### 4. Move the Robot with the Controller
 
