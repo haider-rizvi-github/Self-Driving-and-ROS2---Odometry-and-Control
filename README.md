@@ -407,6 +407,23 @@ Check information about the velocity-command topic:
 ros2 topic info /simple_velocity_controller/commands
 ```
 
+## IMU (Inertial Measurement Unit)
+
+An IMU sensor has been added to the robot model and simulation. The IMU provides accelerometer and gyroscope measurements which are used to improve odometry, state estimation, and sensor-fusion experiments (for example, Kalman Filters and Extended Kalman Filters). In the Gazebo simulation the IMU data is published as a standard ROS 2 Imu message (sensor_msgs/msg/Imu), typically on the /imu/data topic.
+
+Key notes and usage:
+
+- Topic: /imu/data (sensor_msgs/msg/Imu)
+- Frames: imu_link -> base_link (verify in the TF tree)
+- Purpose: fuse wheel odometry and IMU measurements to obtain more robust pose and orientation estimates, particularly during wheel slip or when wheel encoder data is noisy.
+- Filtering: use robot_localization (ekf_localization_node) or custom filter nodes to combine odometry and IMU in a consistent state-estimation pipeline.
+- Simulation noise: configure realistic noise parameters in the Gazebo sensor plugin, or model noise in software when testing filters.
+
+To enable or configure the IMU in this workspace, check and edit the robot URDF/XACRO and Gazebo launch files:
+
+- Robot URDF/XACRO: [src/robot_description/urdf/bumperbot.urdf.xacro](/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/src/robot_description/urdf/bumperbot.urdf.xacro)
+- Gazebo launch: [src/robot_description/launch/gazebo.launch.py](/home/syed/Desktop/Self-Driving-and-ROS2---Odometry-and-Control/src/robot_description/launch/gazebo.launch.py)
+
 ## Repository Purpose
 
 This repository is intended for learning and experimentation with mobile-robot kinematics, ROS 2 control, Gazebo simulation, odometry, localization, and sensor fusion.

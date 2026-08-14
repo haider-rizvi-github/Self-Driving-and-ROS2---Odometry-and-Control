@@ -93,9 +93,9 @@ def generate_launch_description():
         package="ros_gz_bridge",
         executable="parameter_bridge",
         arguments=[
-            "/model/bumperbot/joint_state@sensor_msgs/msg/JointState[gz.msgs.msg.ModelJointState",
-            "/model/bumperbot/pose@geometry_msgs/msg/PoseStamped[gz.msgs.msg.Pose",
-            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",             # publishes simulation clock to ROS 2
+            "/imu@sensor_msgs/msg/Imu[gz.msgs.IMU", # publishes IMU data from the robot
         ],
         output="screen",
     )
