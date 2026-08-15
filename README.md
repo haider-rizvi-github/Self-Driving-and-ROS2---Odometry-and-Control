@@ -418,6 +418,11 @@ Key notes and usage:
 - Purpose: fuse wheel odometry and IMU measurements to obtain more robust pose and orientation estimates, particularly during wheel slip or when wheel encoder data is noisy.
 - Filtering: use robot_localization (ekf_localization_node) or custom filter nodes to combine odometry and IMU in a consistent state-estimation pipeline.
 - Simulation noise: configure realistic noise parameters in the Gazebo sensor plugin, or model noise in software when testing filters.
+- EKF launch: run the localization stack with:
+
+```bash
+ros2 launch bumperbot_localization local_localization.launch.py
+```
 
 To enable or configure the IMU in this workspace, check and edit the robot URDF/XACRO and Gazebo launch files:
 
