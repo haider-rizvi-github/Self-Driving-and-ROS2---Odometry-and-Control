@@ -80,12 +80,12 @@ class NoisyController(Node):
             return
 
         # for noisy: adding wheel_encoder_left and right
-        wheel_encoder_left= msg.position[1] + np.random.normal(0, 0.005)
-        wheel_encoder_right= msg.position[0] + np.random.normal(0, 0.005)   
+        wheel_encoder_left= msg.position[0] + np.random.normal(0, 0.005)
+        wheel_encoder_right= msg.position[1] + np.random.normal(0, 0.005)   
         
         current_time = Time.from_msg(msg.header.stamp)
-        left_position = msg.position[1]
-        right_position = msg.position[0]
+        left_position = msg.position[0]
+        right_position = msg.position[1]
 
         # Use the first message only to initialize odometry.
         if self.prev_time_ is None:

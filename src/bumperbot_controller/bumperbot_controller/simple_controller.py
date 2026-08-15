@@ -99,8 +99,8 @@ class SimpleController(Node):
             return
 
         current_time = Time.from_msg(msg.header.stamp)
-        left_position = msg.position[1]
-        right_position = msg.position[0]
+        left_position = msg.position[0]
+        right_position = msg.position[1]
 
         # Use the first message only to initialize odometry.
         if self.prev_time_ is None:
